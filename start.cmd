@@ -4,9 +4,9 @@ REM Install RDP Wrapper
 START /B /D bin\RDPWrap-v1.6.1 RDPWInst.exe -i -o
 
 REM Change Option Control Panel
-REG ADD HKCU\Control Panel\Mouse /v DoubleClickSpeed /t REG_SZ /d "100" /f
-REG ADD HKCU\Control Panel\Keyboard /v KeyboardDelay /t REG_SZ /d "0" /f
-REG ADD HKCU\Control Panel\Keyboard /v KeyboardSpeed /t REG_SZ /d "31" /f
+REG ADD "HKCU\Control Panel\Mouse" /v DoubleClickSpeed /t REG_SZ /d "100" /f
+REG ADD "HKCU\Control Panel\Keyboard" /v KeyboardDelay /t REG_SZ /d "0" /f
+REG ADD "HKCU\Control Panel\Keyboard" /v KeyboardSpeed /t REG_SZ /d "31" /f
 
 REM HDD saving
 powercfg /setacvalueindex SCHEME_CURRENT 381b4222-f694-41f0-9685-ff5bb260df2e 6738e2c4-e8a5-4a42-b16a-e040e769756e 0
