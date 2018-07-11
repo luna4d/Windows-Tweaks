@@ -4,7 +4,7 @@ REM Install RDP Wrapper
 START /B /D bin\RDPWrap-v1.6.1 RDPWInst.exe -i -o
 
 REM Change Option Control Panel
-REG ADD "HKCU\Control Panel\Mouse" /v DoubleClickSpeed /t REG_SZ /d "100" /f
+REG ADD "HKCU\Control Panel\Mouse" /v DoubleClickSpeed /t REG_SZ /d "200" /f
 REG ADD "HKCU\Control Panel\Keyboard" /v KeyboardDelay /t REG_SZ /d "0" /f
 REG ADD "HKCU\Control Panel\Keyboard" /v KeyboardSpeed /t REG_SZ /d "31" /f
 
@@ -38,4 +38,6 @@ REG ADD HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\PriorityControl /v W
 
 REM Service disable
 sc config lfsvc start=disabled
+sc stop lfsvc
 sc config DiagTrack start=disabled
+sc stop DiagTrack
