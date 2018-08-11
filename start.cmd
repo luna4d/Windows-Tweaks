@@ -1,7 +1,7 @@
 CD %~dp0
 
 REM Install RDP Wrapper
-START /B /D bin\RDPWrap-v1.6.1 RDPWInst.exe -i -o
+START /B /D bin\RDPWrap-v1.6.2 RDPWInst.exe -i -o
 
 REM Change Option Control Panel
 REG ADD "HKCU\Control Panel\Mouse" /v DoubleClickSpeed /t REG_SZ /d "200" /f
