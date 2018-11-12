@@ -33,8 +33,11 @@ REG ADD "HKCU\Control Panel\Desktop\WindowMetrics" /v MinAnimate /t REG_SZ /d "0
 REG ADD "HKCU\Control Panel\Desktop" /v FontSmoothing /t REG_SZ /d "0" /f
 REG ADD "HKCU\Control Panel\Desktop" /v UserPreferencesMask /t REG_BINARY /d "9012028010000000" /f
 
-REM default 2  38:FORGROUND 24:BACKGROUND 18:BALANCE
-REG ADD HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\PriorityControl /v Win32PrioritySeparation /t REG_DWORD /d 18 /f
+REM 2:DEFAULT
+REM 0x16:FORGROUND-L 0x14:BACKGROUND-L 0x18:BALANCE-L
+REM 0x26:FORGROUND-S 0x24:BACKGROUND-S 0x28:BALANCE-S
+REM 0x1A:Long Fixed 3:1 0x19:Long Fixed 2:1 0x18:Long Fixed 1:1
+REG ADD HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\PriorityControl /v Win32PrioritySeparation /t REG_DWORD /d 0x1A /f
 
 REM Service disable
 sc config lfsvc start=disabled
