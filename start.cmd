@@ -1,7 +1,7 @@
 CD %~dp0
 
-REM Install RDP Wrapper
-START /B /D bin\RDPWrap-v1.6.2 RDPWInst.exe -i -o
+REM REmove Reserved Storage
+REG ADD HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\ReserveManager /v ShippedWithReserves /t REG_DWORD /d 0 /f
 
 REM Change Option Control Panel
 REG ADD "HKCU\Control Panel\Mouse" /v DoubleClickSpeed /t REG_SZ /d "200" /f
