@@ -1,6 +1,6 @@
 CD %~dp0
 
-REM REmove Reserved Storage
+REM Remove Reserved Storage
 REG ADD HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\ReserveManager /v ShippedWithReserves /t REG_DWORD /d 0 /f
 
 REM Change Option Control Panel
